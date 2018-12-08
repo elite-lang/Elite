@@ -6,7 +6,7 @@
 #ifndef _CHARNODE_H
 #define _CHARNODE_H
 
-#include "Node.h"
+#include "Elite/Model/Node.h"
 
 
 class CharNode: public Node {

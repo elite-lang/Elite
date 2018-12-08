@@ -10,7 +10,7 @@
 #define META_MODEL_H
 
 #include <string>
-#include "LLCG/lvalue.h"
+#include "Elite/LLCG/lvalue.h"
 
 
 

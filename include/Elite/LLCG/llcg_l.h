@@ -8,10 +8,10 @@
 #define LLVG_L_H
 
 
-#include "LLCG/lvalue.h"
+#include "Elite/LLCG/lvalue.h"
 
-#include "MetaModel/FunctionModel.h"
-#include "MetaModel/StructModel.h"
+#include "Elite/MetaModel/FunctionModel.h"
+#include "Elite/MetaModel/StructModel.h"
 
 #include <string>
 #include <vector>

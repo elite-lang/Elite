@@ -6,11 +6,11 @@
 #include <string>
 using namespace std;
 
-#include "LLCG/llcg.h"
-#include "MetaModel/StructModel.h"
-#include "MetaModel/FunctionModel.h"
-#include "MetaModel/MacroModel.h"
-#include "CodeGenFunction.h"
+#include "Elite/LLCG/llcg.h"
+#include "Elite/MetaModel/StructModel.h"
+#include "Elite/MetaModel/FunctionModel.h"
+#include "Elite/MetaModel/MacroModel.h"
+#include "Elite/CodeGen/CodeGenFunction.h"
 
 class Node;
 class Pass;

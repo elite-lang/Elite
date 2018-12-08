@@ -10,13 +10,13 @@ class EliteConan(ConanFile):
     default_options = "shared=False", "gtest:shared=False"
     generators = "cmake"
     build_policy = "missing"
-    requires = 'gtest/1.8.0@lasote/stable'
+    requires = 'gtest/1.8.0@sunxfancy/stable', 'llvm/7.0.0@sunxfancy/stable'
     exports = "*"
     
     def build(self):
         cmake = CMake(self)
-        self.run('cmake ../.. %s' % cmake.command_line)
-        self.run("cmake --build . %s" % cmake.build_config)
+        cmake.configure()
+        cmake.build()
 
     def package(self):
         self.copy("*.h", dst="include", src="include")

@@ -9,7 +9,7 @@
 #ifndef LLVM_TYPE_H
 #define LLVM_TYPE_H
 
-#include "lvalue.h"
+#include "Elite/LLCG/lvalue.h"
 
 class llvm_type;
 

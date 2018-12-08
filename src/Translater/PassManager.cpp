@@ -1,6 +1,6 @@
 
-#include "PassManager.h"
-#include "ICodeGenContext.h"
+#include "Elite/Translater/PassManager.h"
+#include "Elite/CodeGen/ICodeGenContext.h"
 
 
 PassManager::PassManager () {

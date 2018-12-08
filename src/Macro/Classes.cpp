@@ -5,11 +5,11 @@
 * @Last Modified time: 2015-11-25 15:35:28
 */
 
-#include "CodeGenContext.h"
-#include "StringNode.h"
-#include "IDNode.h"
+#include "Elite/CodeGen/CodeGenContext.h"
+#include "Elite/Model/StringNode.h"
+#include "Elite/Model/IDNode.h"
 #include <stdio.h>
-#include "Pass.h"
+#include "Elite/Translater/Pass.h"
 
 extern const FuncReg macro_classes_replace[];
 

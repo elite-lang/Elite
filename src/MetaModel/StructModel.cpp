@@ -5,9 +5,9 @@
 * @Last Modified time: 2015-12-24 09:46:46
 */
 
-#include "MetaModel/StructModel.h"
-#include "CodeGenContext.h"
-#include "idtable.h"
+#include "Elite/MetaModel/StructModel.h"
+#include "Elite/CodeGen/CodeGenContext.h"
+#include "Translater/idtable.h"
 
 
 

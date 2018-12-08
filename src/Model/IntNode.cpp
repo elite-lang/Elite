@@ -3,7 +3,7 @@
  */
 
 
-#include "IntNode.h"
+#include "Elite/Model/IntNode.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include "elegantlist.hpp"

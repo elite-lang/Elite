@@ -10,7 +10,7 @@
 
 #include <string>
 #include <map>
-#include "Node.h"
+#include "Elite/Model/Node.h"
 
 using namespace std;
 

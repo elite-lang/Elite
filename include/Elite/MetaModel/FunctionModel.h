@@ -9,7 +9,7 @@
 #ifndef FUNCTION_MODEL_H
 #define FUNCTION_MODEL_H
 
-#include "MetaModel.h"
+#include "Elite/MetaModel/MetaModel.h"
 #include <vector>
 #include <string>
 

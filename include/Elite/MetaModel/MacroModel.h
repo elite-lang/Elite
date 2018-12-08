@@ -9,8 +9,8 @@
 #ifndef MACRO_MODEL_H
 #define MACRO_MODEL_H
 
-#include "Model/Node.h"
-#include "MetaModel.h"
+#include "Elite/Model/Node.h"
+#include "Elite/MetaModel/MetaModel.h"
 
 /**
  * @brief 宏模型元类型

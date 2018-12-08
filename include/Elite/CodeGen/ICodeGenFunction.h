@@ -8,8 +8,8 @@
 #ifndef I_CODE_GEN_FUNCTION_H
 #define I_CODE_GEN_FUNCTION_H
 
-#include "Model/Node.h"
-#include "LLCG/llcg.h"
+#include "Elite/Model/Node.h"
+#include "Elite/LLCG/llcg.h"
 class CodeGenContext;
 
 class ICodeGenFunction

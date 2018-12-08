@@ -8,7 +8,7 @@
 #ifndef LLVM_VALUE_H
 #define LLVM_VALUE_H
 
-#include "lvalue.h"
+#include "Elite/LLCG/lvalue.h"
 
 class llvm_value;
 

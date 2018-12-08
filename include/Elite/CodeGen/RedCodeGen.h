@@ -10,9 +10,9 @@
 #ifndef RED_CODE_GEN_H
 #define RED_CODE_GEN_H
 
-#include "Model/Node.h"
-#include "CodeGen.h"
-#include "PassManager.h"
+#include "Elite/Model/Node.h"
+#include "Elite/CodeGen/CodeGen.h"
+#include "Elite/Translater/PassManager.h"
 
 
 class CodeGenContext;

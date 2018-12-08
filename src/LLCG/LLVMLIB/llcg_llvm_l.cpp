@@ -5,10 +5,10 @@
 * @Last Modified time: 2016-01-01 17:17:52
 */
 
-#include "llcg_llvm.h"
+#include "LLCG/LLVMLIB/llcg_llvm.h"
 
-#include "llvm_value.h"
-#include "llvm_type.h"
+#include "LLCG/LLVMLIB/llvm_value.h"
+#include "LLCG/LLVMLIB/llvm_type.h"
 
 lvalue* llcg_llvm::l_FuncType(FunctionModel* fmodel) {
 	return nullptr;

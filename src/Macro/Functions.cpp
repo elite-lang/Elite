@@ -5,12 +5,12 @@
 * @Last Modified time: 2015-12-27 16:30:41
 */
 
-#include "CodeGenContext.h"
-#include "StringNode.h"
-#include "MetaModel/StructModel.h"
-#include "MetaModel/FunctionModel.h"
-#include "nodes.h"
-#include "idtable.h"
+#include "Elite/Model/CodeGenContext.h"
+#include "Elite/Model/StringNode.h"
+#include "Elite/MetaModel/StructModel.h"
+#include "Elite/MetaModel/FunctionModel.h"
+#include "Elite/Model/nodes.h"
+#include "Translater/idtable.h"
 #include <iostream>
 
 using namespace std;

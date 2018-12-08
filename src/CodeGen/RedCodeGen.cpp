@@ -5,15 +5,15 @@
 * @Last Modified time: 2015-11-25 22:03:20
 */
 
-#include "RedCodeGen.h"
-#include "idtable.h"
+#include "Elite/CodeGen/RedCodeGen.h"
+#include "Translater/idtable.h"
+#include "Elite/CodeGen/CodeGenContext.h"
 #include <string>
 #include <map>
 #include <vector>
 #include <set>
 using namespace std;
 
-#include "CodeGenContext.h"
 
 RedCodeGen::RedCodeGen() {
 

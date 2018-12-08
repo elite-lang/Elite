@@ -6,7 +6,7 @@
 #ifndef _IDNODE_H
 #define _IDNODE_H
 
-#include "Node.h"
+#include "Elite/Model/Node.h"
 #include <string>
 
 using namespace std;

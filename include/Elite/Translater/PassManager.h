@@ -1,7 +1,7 @@
 #ifndef PASS_MANAGER_H
 #define PASS_MANAGER_H
 
-#include "Pass.h"
+#include "Elite/Translater/Pass.h"
 #include <vector>
 #include <list>
 #include <string>

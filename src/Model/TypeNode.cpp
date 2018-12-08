@@ -5,8 +5,8 @@
 * @Last Modified time: 2015-12-21 17:12:32
 */
 
-#include "TypeNode.h"
-#include "CodeGenContext.h"
+#include "Elite/Model/TypeNode.h"
+#include "Elite/CodeGen/CodeGenContext.h"
 #include "elegantlist.hpp"
 #include <iostream>
 using namespace std;

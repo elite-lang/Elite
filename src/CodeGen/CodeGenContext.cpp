@@ -5,13 +5,13 @@
 * @Last Modified time: 2015-12-24 09:37:24
 */
 
-#include "CodeGenContext.h"
-#include "StringNode.h"
-#include "IDNode.h"
+#include "Elite/CodeGen/CodeGenContext.h"
+#include "Elite/Model/StringNode.h"
+#include "Elite/Model/IDNode.h"
+#include "Translater/idtable.h"
+#include "Translater/MacroTranslate.h"
+#include "Elite/Translater/Pass.h"
 #include <iostream>
-#include "idtable.h"
-#include "MacroTranslate.h"
-#include "Pass.h"
 
 using namespace std;
 

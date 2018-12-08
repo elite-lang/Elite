@@ -1,0 +1,7 @@
+#include "Elite/Model/Node.h"
+#include "Elite/Model/CharNode.h"
+#include "Elite/Model/FloatNode.h"
+#include "Elite/Model/IDNode.h"
+#include "Elite/Model/IntNode.h"
+#include "Elite/Model/StringNode.h"
+#include "Elite/Model/TypeNode.h"

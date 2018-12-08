@@ -5,9 +5,8 @@
 * @Last Modified time: 2015-12-24 09:10:42
 */
 
-#include "CodeGenFunction.h"
-#include <cassert>
-#include "CodeGenContext.h"
+#include "Elite/CodeGen/CodeGenFunction.h"
+#include "Elite/CodeGen/CodeGenContext.h"
 
 CodeGenFunction::CodeGenFunction() {
 }

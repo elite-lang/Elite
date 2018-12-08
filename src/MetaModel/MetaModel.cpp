@@ -5,8 +5,8 @@
 * @Last Modified time: 2015-12-24 09:46:33
 */
 
-#include "MetaModel/MetaModel.h"
-#include "CodeGenContext.h"
+#include "Elite/MetaModel/MetaModel.h"
+#include "Elite/CodeGen/CodeGenContext.h"
 
 MetaModel::MetaModel(std::string name) {
 	this->name = name;

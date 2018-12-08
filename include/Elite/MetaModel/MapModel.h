@@ -1,7 +1,7 @@
 #ifndef MAP_MODEL_H
 #define MAP_MODEL_H
 
-#include "MetaModel/MetaModel.h"
+#include "Elite/MetaModel/MetaModel.h"
 #include <map>
 #include <string>
 #include "idmap.h"

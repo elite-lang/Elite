@@ -5,8 +5,8 @@
 * @Last Modified time: 2015-11-24 11:01:39
 */
 
-#include "llcg.h"
-#include "llcg_llvm.h"
+#include "Elite/LLCG/llcg.h"
+#include "LLCG/LLVMLIB/llcg_llvm.h"
 
 llcg* llcg::CreateLLVM() {
 	return new llcg_llvm();

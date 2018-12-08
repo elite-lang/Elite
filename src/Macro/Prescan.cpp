@@ -5,12 +5,12 @@
 * @Last Modified time: 2015-12-24 09:41:18
 */
 
-#include "CodeGenContext.h"
-#include "StringNode.h"
-#include "MetaModel/StructModel.h"
-#include "MetaModel/FunctionModel.h"
-#include "IDNode.h"
-#include "idtable.h"
+#include "Elite/CodeGen/CodeGenContext.h"
+#include "Elite/Model/StringNode.h"
+#include "Elite/MetaModel/StructModel.h"
+#include "Elite/MetaModel/FunctionModel.h"
+#include "Elite/Model/IDNode.h"
+#include "Translater/idtable.h"
 #include <stdio.h>
 
 static LValue function_macro(CodeGenContext* context, Node* node) {

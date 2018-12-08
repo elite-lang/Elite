@@ -1,10 +1,12 @@
-#include <deque>
-#include "idmap.h"
-using namespace std;
 
 #ifndef IDTABLE_H
 #define IDTABLE_H
 
+
+#include "Translater/idmap.h"
+#include <deque>
+
+using namespace std;
 
 /**
  * @brief 简易栈式符号表，需要在进入函数后手动压栈等操作

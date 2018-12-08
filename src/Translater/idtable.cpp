@@ -1,4 +1,4 @@
-#include "idtable.h"
+#include "Translater/idtable.h"
 
 IDTable::IDTable()
 {

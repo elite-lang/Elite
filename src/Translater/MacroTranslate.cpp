@@ -5,7 +5,7 @@
 * @Last Modified time: 2015-11-17 20:51:34
 */
 
-#include "MacroTranslate.h"
+#include "Translater/MacroTranslate.h"
 
 Node* MacroTranslate::Marco(Node* node_template, Node* args) {
 	// 第一个参数 宏参数表

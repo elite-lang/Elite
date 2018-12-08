@@ -6,7 +6,7 @@
 #ifndef _INTNODE_H
 #define _INTNODE_H
 
-#include "Node.h"
+#include "Elite/Model/Node.h"
 
 class IntNode: public Node {
 public: 

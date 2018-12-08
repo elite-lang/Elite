@@ -1,5 +1,5 @@
 
-#include "Pass.h"
+#include "Elite/Translater/Pass.h"
 
 Pass::Pass (const FuncReg* macro_funcs) {
 	AddOrReplaceMacros(macro_funcs);

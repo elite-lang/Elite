@@ -3,7 +3,7 @@
  */
 
 
-#include "CharNode.h"
+#include "Elite/Model/CharNode.h"
 
 /**
  * CharNode implementation

@@ -1,5 +1,5 @@
 
-#include "MetaModel/MapModel.h"
+#include "Elite/MetaModel/MapModel.h"
 
 
 MapModel::MapModel (const string& name)

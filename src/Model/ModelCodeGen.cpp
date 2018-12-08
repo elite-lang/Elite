@@ -5,8 +5,8 @@
 * @Last Modified time: 2015-11-25 21:58:03
 */
 
-#include "CodeGenContext.h"
-#include "nodes.h"
+#include "Elite/CodeGen/CodeGenContext.h"
+#include "Elite/Model/nodes.h"
 
 #include <iostream>
 using namespace std;

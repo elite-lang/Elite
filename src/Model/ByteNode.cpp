@@ -3,7 +3,7 @@
  */
 
 
-#include "ByteNode.h"
+#include "Elite/Model/ByteNode.h"
 
 /**
  * ByteNode implementation

@@ -9,7 +9,7 @@
 #define NODE_H
 
 #include <string>
-#include "LLCG/lvalue.h"
+#include "Elite/LLCG/lvalue.h"
 
 class ElegantList;
 
@@ -130,9 +130,6 @@ public:
 	 * @param k 缩进层次, 首次传0或1皆可
 	 */
 	void print(int k);
-
-	Node* getNext() { return next; }
-	Node* getChild() { return child; }
 
 	/**
 	 * @brief 重要的代码生成函数

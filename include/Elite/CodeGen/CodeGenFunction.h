@@ -10,7 +10,7 @@
 #define CODE_GEN_FUNCTION_H
 
 
-#include "ICodeGenFunction.h"
+#include "Elite/CodeGen/ICodeGenFunction.h"
 
 /**
  * @brief 定义宏翻译函数指针

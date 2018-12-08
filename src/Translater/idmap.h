@@ -1,11 +1,11 @@
-#include <map>
-
-using namespace std;
 
 #ifndef IDMAP_H
 #define IDMAP_H
 
-#include "LLCG/lvalue.h"
+#include "Elite/LLCG/lvalue.h"
+#include <map>
+
+using namespace std;
 
 
 /**

@@ -8,7 +8,7 @@
 #ifndef STRUCT_MODEL_H
 #define STRUCT_MODEL_H
 
-#include "MetaModel.h"
+#include "Elite/MetaModel/MetaModel.h"
 #include <vector>
 #include <string>
 

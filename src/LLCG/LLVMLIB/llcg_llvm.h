@@ -9,8 +9,8 @@
 #ifndef LLCG_LLVM_H
 #define LLCG_LLVM_H
 
-#include "LLCG/llcg.h"
-#include "LLCG/llcg_l.h"
+#include "Elite/LLCG/llcg.h"
+#include "Elite/LLCG/llcg_l.h"
 
 #include "llvm/IR/Verifier.h"
 #include "llvm/ExecutionEngine/GenericValue.h"

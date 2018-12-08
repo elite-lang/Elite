@@ -6,7 +6,7 @@
 #ifndef _BYTENODE_H
 #define _BYTENODE_H
 
-#include "Node.h"
+#include "Elite/Model/Node.h"
 
 
 class ByteNode: public Node {

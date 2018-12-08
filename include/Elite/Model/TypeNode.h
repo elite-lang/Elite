@@ -8,7 +8,7 @@
 #ifndef TYPE_NODE_H
 #define TYPE_NODE_H
 
-#include "Node.h"
+#include "Elite/Model/Node.h"
 #include <string>
 using namespace std;
 

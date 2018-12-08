@@ -10,7 +10,7 @@
 #ifndef CODE_GEN_CONTENT_H
 #define CODE_GEN_CONTENT_H
 
-#include "ICodeGenContext.h"
+#include "Elite/CodeGen/ICodeGenContext.h"
 
 
 /**

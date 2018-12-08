@@ -7,7 +7,7 @@
 #include <stack>
 using namespace std;
 
-#include "CodeGenFunction.h"
+#include "Elite/CodeGen/CodeGenFunction.h"
 
 
 class Pass {

@@ -6,7 +6,7 @@
 */
 
 
-#include "StringNode.h"
+#include "Elite/Model/StringNode.h"
 #include <stdio.h>
 #include "elegantlist.hpp"
 #include "Utils/StringEscape.h"

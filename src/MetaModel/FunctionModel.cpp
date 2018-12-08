@@ -5,9 +5,9 @@
 * @Last Modified time: 2015-12-24 09:46:12
 */
 
-#include "MetaModel/FunctionModel.h"
-#include "CodeGenContext.h"
-#include "idtable.h"
+#include "Elite/MetaModel/FunctionModel.h"
+#include "Elite/CodeGen/CodeGenContext.h"
+#include "Translater/idtable.h"
 
 FunctionModel::FunctionModel(
 	std::string& 			  name,

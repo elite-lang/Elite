@@ -5,24 +5,17 @@
 * @Last Modified time: 2015-12-10 18:19:23
 */
 
-#include "Node.h"
+#include "Elite/Model/nodes.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include "nodes.h"
 #include <iostream>
 #include "elegantlist.hpp"
 
-void Node::init() {
-	next = child = NULL;
-}
 
 Node::Node() {
-	init();
 }
 
 Node::Node(Node* n) {
-	init();
-	addChildren(n);
 }
 
 Node::~Node() {
@@ -37,21 +30,6 @@ Node* Node::Create() {
 	return new Node();
 }
 
-void Node::Free(Node*& p) {
-	if (p != NULL) {
-		delete p;
-		p = NULL;
-	}
-}
-
-void Node::FreeAll(Node*& p) {
-	if (p != NULL) {
-		Node::FreeAll(p->next);
-		Node::FreeAll(p->child);
-		delete p;
-		p = NULL;
-	}
-}
 
 Node* Node::copy() {
 	return new Node(*this);
@@ -59,85 +37,12 @@ Node* Node::copy() {
 
 Node* Node::copyAll() {
 	Node* n = copy();
-	if (next != NULL) n->next = next->copyAll();
-	if (child != NULL) n->child = child->copyAll();
 	return n;
 }
 
-Node* Node::copyChild() {
-	Node* n = copy();
-	n->next = NULL;
-	if (child != NULL) n->child = child->copyAll();
-	return n;
-}
-
-
-void Node::replaceNext(Node* node) {
-	Node* n = this->next;
-	if (n == NULL) { printf("替换失败\n"); return; }
-	next = node;
-	node->next = n->next;
-	Node::FreeAll(n->child);
-	Node::Free(n);
-}
-
-void Node::replaceChild(Node* node) {
-	Node* n = this->child;
-	if (n == NULL) { printf("替换失败\n"); return; }
-	child = node;
-	Node::FreeAll(n);
-}
-
-void Node::replaceChildFirst(Node* node) {
-	Node* n = this->child;
-	if (n == NULL) { printf("替换失败\n"); return; }
-	child = node;
-	node->next = n->next;
-	Node::FreeAll(n->child);
-	Node::Free(n);
-}
-
-void Node::addChildren(Node* n) {
-	if (child == NULL) {
-		child = n;
-	} else {
-		child->addBrother(n);
-	}
-}
-
-void Node::addBrother (Node* n) {
-	Node* p = this;
-	while (p->next != NULL) {
-		p = p->next;
-	}
-	p->next = n;
-}
 
 void Node::print(int k) {
-	if (getType() != node_t) {
-		printSelf();
-	} else {
-		el.print("(");
-		Node* p = child;
-		while (p != NULL) {
-			p->print(k+1);
-			p = p->next;
-		}
-		el.print(")");
-	}
-	if (k == 0) printf("\n\n");
-	// for (int i = 0; i < k; ++i)
-	// 	printf("    ");
-	// printSelf();
-	// printf("\n");
-	//
-	// Node* p = child; int t = 0;
-	// while (p != NULL) {
-	// 	p->print(k+1);
-	// 	p = p->next;
-	// 	++t;
-	// }
-	// if (t >= 3) printf("\n");
+
 }
 
 void Node::printSelf() {
@@ -149,37 +54,7 @@ NodeType Node::getType() {
 }
 
 bool Node::isSingle() {
-	return next == NULL;
-}
-
-Node* Node::make_list(int num, ...) {
-	va_list argp; Node* para = NULL;
-	Node* ans = NULL;
-	va_start( argp, num );
-    for (int i = 0; i < num; ++i) {
-        para = va_arg( argp, Node* );
-        if (para == NULL) continue;
-        if (!para->isSingle()) para = new Node(para);
-        if ( ans == NULL )
-        	ans = para;
-        else ans->addBrother(para);
-    }
-    va_end( argp );
-    return ans;
-}
-
-Node* Node::makeList(int num, Node* plist[]) {
-	Node* para = NULL;
-	Node* ans = NULL;
-	for (int i = 0; i < num; ++i) {
-        para = plist[i];
-        if (para == NULL) continue;
-        if (!para->isSingle()) para = new Node(para);
-        if ( ans == NULL )
-        	ans = para;
-        else ans->addBrother(para);
-    }
-    return ans;
+	return true;
 }
 
 Node* Node::getList(Node* node) {
