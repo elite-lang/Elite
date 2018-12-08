@@ -1,0 +1,16 @@
+build: false
+clone_depth: 3
+
+environment:
+    PYTHON: "C:\\Python27"
+    PYTHON_VERSION: "2.7.11"
+    PYTHON_ARCH: "32"
+
+install:
+  # - git submodule update --init --recursive
+  - set PATH=%PATH%;%PYTHON%/Scripts/
+  - pip.exe install conan_package_tools # It install conan too
+  - conan user sunxfancy # It creates the conan data directory
+
+build_script:
+  - codef build
