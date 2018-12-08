@@ -5,7 +5,9 @@
 * @Last Modified time: 2015-12-10 18:19:23
 */
 
+#include "Elite/Model/ModelException.h"
 #include "Elite/Model/nodes.h"
+
 #include <iostream>
 #include <stdarg.h>
 #include <stdio.h>
@@ -92,42 +94,41 @@ bool Node::isTypeNode()
     return getType() == type_node_t;
 }
 
-Node* Node::getChild() { throw FunctionNotImplement("getChild", "Element didn't have children"); }
+Node* Node::getChild() { throw InvalidMethod("getChild", "Element didn't have children."); }
 
 std::string& Node::getStr()
 {
-    std::cerr << "getStr() - 获取字符串错误, 该类型不正确: " << getTypeName() << std::endl;
-    exit(1);
+    throw InvalidMethod("getStr", "Can not get string since the wrong type.");
 }
 
-
-Node* Node::make_linked(...) {
-	return nullptr;
+Node* Node::make_linked(...)
+{
+    return nullptr;
 }
 
-Node* Node::makeLinked(int num, Node* plist[]) {
+Node* Node::makeLinked(int num, Node* plist[])
+{
 
-	return nullptr;
+    return nullptr;
 }
 
-
-Node* Node::CreateList(Node* n) {
-	return nullptr;
-
+Node* Node::CreateList(Node* n)
+{
+    return nullptr;
 }
 
-Node* Node::CreateBlock(Node* n) {
+Node* Node::CreateBlock(Node* n)
+{
 
-	return nullptr;
+    return nullptr;
 }
 
-void Node::Free(Node*& p) {
-
+void Node::Free(Node*& p)
+{
 }
 
-void Node::FreeAll(Node*& p) {
-
+void Node::FreeAll(Node*& p)
+{
 }
-
 
 } // Elite

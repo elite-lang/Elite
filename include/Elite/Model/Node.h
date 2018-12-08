@@ -9,7 +9,6 @@
 #define NODE_H
 
 // #include "Elite/LLCG/lvalue.h"
-#include "Elite/Model/ModelException.h"
 #include <string>
 
 namespace Elite {
