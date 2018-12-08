@@ -16,9 +16,6 @@ void yyerror(const char *s);
 
 %}
 
- 
-
-/* Represents the many different ways we can access our data */
 
 %union {
     Node *nodes;
@@ -26,32 +23,13 @@ void yyerror(const char *s);
     int token;
 }
 
- 
-
-/* Define our terminal symbols (tokens). This should
-
-   match our tokens.l lex file. We also define the node type
-
-   they represent.
-
- */
 
 %token <str> ID INTEGER DOUBLE
+%token <str> STRING CHAR
 %token <token> CEQ CNE CGE CLE MBK
 %token <token> '<' '>' '=' '+' '-' '*' '/' '%' '^' '&' '|' '~' '@' '?' ':'
 %token <token> PP SS LF RF AND OR '!' NSP PE SE ME DE AE OE XE MODE FLE FRE SZ
-%token <str> STRING CHAR
-%token <token> IF ELSE WHILE DO UNTIL GOTO FOR FOREACH 
-%token <token> DELEGATE DEF DEFINE IMPORT USING NAMESPACE DEFMACRO CONST PACKED VOLATILE WOVEN
-%token <token> RETURN NEW THIS DELETE
-%token <str> KWS_EXIT KWS_ERROR KWS_TSZ KWS_STRUCT KWS_FWKZ KWS_FUNC_XS KWS_TYPE
 
-/* 
-   Define the type of node our nonterminal symbols represent.
-   The types refer to the %union declaration above. Ex: when
-   we call an ident (defined by union type ident) we are really
-   calling an (NIdentifier*). It makes the compiler happy.
- */
 
 %type <nodes> program
 %type <nodes> def_module_statement
@@ -84,10 +62,6 @@ void yyerror(const char *s);
 %type <nodes> macro_call_args
 %type <nodes> list full_list woven_state
 
-
-
-//%type <token> operator 这个设计容易引起规约冲突，舍弃
-/* Operator precedence for mathematical operators */
 
 
 %left AE OE XE MODE FLE FRE

@@ -14,6 +14,8 @@ char* maketoken(const char* data, int len);
 %}
 
 %option yylineno
+%option reentrant noyywrap
+%option bison-bridge bison-locations
 
 %%
 
@@ -87,52 +89,6 @@ char* maketoken(const char* data, int len);
 "@"                     return '@';
 ",@"                    return MBK;
 "`"                     return '`';
-    /* 下面声明要用到的关键字 */
-
-    /* 控制流 */
-"if"                    return IF;
-"else"                  return ELSE;
-"while"                 return WHILE;
-"do"                    return DO;
-"until"                 return UNTIL;
-"goto"                  return GOTO;
-"for"                   return FOR;
-"foreach"               return FOREACH;
-
-    /* 退出控制 */
-"break"|"continue"|"exit"   SAVE_TOKEN; return KWS_EXIT;
-
-"return"                return RETURN;
-
-    /* 特殊运算符 */
-"new"                   return NEW;
-"delete"                return DELETE;
-"this"                  return THIS;
-    
-    /* 特殊定义 */
-"delegate"              return DELEGATE;
-"def"                   return DEF;
-"define"                return DEFINE;
-"defmacro"              return DEFMACRO;
-"import"                return IMPORT;
-"using"                 return USING;
-"namespace"             return NAMESPACE;
-"const"                 return CONST;
-"packed"                return PACKED;
-"volatile"              return VOLATILE;
-"woven"                 return WOVEN;
-
-"try"|"catch"|"finally"|"throw"  SAVE_TOKEN; return KWS_ERROR; /* 异常控制 */
-
-"null"|"true"|"false"               SAVE_TOKEN; return KWS_TSZ; /* 特殊值 */
-
-"struct"|"enum"|"union"|"module"|"interface"|"class"     SAVE_TOKEN; return KWS_STRUCT; /* 结构声明 */
-
-"public"|"private"|"protected"  SAVE_TOKEN; return KWS_FWKZ; /* 访问控制 */
-
-"static"|"extern"|"virtual"|"abstract"|"in"|"out"        SAVE_TOKEN; return KWS_FUNC_XS; /* 函数修饰符 */
-
-"var"|"auto"            SAVE_TOKEN; return KWS_TYPE; /* 基本类型 */
 
 [a-zA-Z_][a-zA-Z0-9_]*  SAVE_TOKEN; return ID; /* 标识符 */
 
