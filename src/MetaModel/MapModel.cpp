@@ -1,6 +1,6 @@
 
 #include "Elite/MetaModel/MapModel.h"
-
+#include "Translater/idmap.h"
 
 MapModel::MapModel (const string& name)
     : MetaModel(name) {

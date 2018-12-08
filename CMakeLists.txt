@@ -14,8 +14,23 @@ SET(VERSION_PATCH "0")
 
 # SET (CMAKE_BUILD_TYPE Release) # 默认构建Debug模式
 
+# 寻找依赖项
+find_package(LLVM REQUIRED CONFIG)
+message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+
+include_directories(${LLVM_INCLUDE_DIRS})
+add_definitions(${LLVM_DEFINITIONS})
+llvm_map_components_to_libnames(llvm_libs
+	support core irreader mc mcjit bitwriter x86codegen target)
+
+find_package(BISON)
+find_package(FLEX)
+
+# 设定编译器版本和相关目录
+
 set (CMAKE_CXX_STANDARD 14)
-include_directories(src include)
+include_directories(src include header_libs)
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )
 set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
@@ -30,9 +45,9 @@ list(REMOVE_ITEM  source_files  ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 # 生成库目标
 add_library(${PROJECT_NAME} ${source_files})
-
-# 链接动态库
-target_link_libraries(${PROJECT_NAME} ${CONAN_LIBS})
+add_executable(${PROJECT_NAME}_exe ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+# 链接库
+target_link_libraries(${PROJECT_NAME}_exe ${PROJECT_NAME} ${llvm_libs})
 
 # 指定动态库版本
 # VERSION 动态库版本

@@ -5,7 +5,7 @@
 * @Last Modified time: 2015-12-27 16:30:41
 */
 
-#include "Elite/Model/CodeGenContext.h"
+#include "Elite/CodeGen/CodeGenContext.h"
 #include "Elite/Model/StringNode.h"
 #include "Elite/MetaModel/StructModel.h"
 #include "Elite/MetaModel/FunctionModel.h"
