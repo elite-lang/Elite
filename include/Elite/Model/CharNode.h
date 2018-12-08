@@ -8,7 +8,8 @@
 
 #include "Elite/Model/Node.h"
 
-
+namespace Elite
+{
 class CharNode: public Node {
 public: 
 	char value;
@@ -20,4 +21,5 @@ public:
 	// virtual Value* codeGen(CodeGenContext* context); 
 };
 
+}
 #endif //_CHARNODE_H

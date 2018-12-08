@@ -9,15 +9,17 @@
 #include "Elite/Model/Node.h"
 #include <string>
 
-using namespace std;
-
+namespace Elite
+{
+	
 class IDNode: public Node {
 public: 
 	static IDNode* Create(const char* _value);
 	static IDNode* Create(char _value);
 	std::string& getStr() { return value; }
-	virtual LValue codeGen(CodeGenContext* context); 
+	// virtual LValue codeGen(CodeGenContext* context); 
 	virtual NodeType getType();
+	virtual std::string getTypeName();
 	virtual Node* copy() {
 		return new IDNode(*this);
 	}
@@ -26,7 +28,9 @@ protected:
 	IDNode(char _value);
 	virtual void printSelf();
 private:
-	string value;
+	std::string value;
 };
+
+} // Elite
 
 #endif //_IDNODE_H

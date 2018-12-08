@@ -6,106 +6,128 @@
 */
 
 #include "Elite/Model/nodes.h"
+#include <iostream>
 #include <stdarg.h>
 #include <stdio.h>
-#include <iostream>
-#include "elegantlist.hpp"
 
+namespace Elite {
 
-Node::Node() {
+Node::Node()
+{
+    next = nullptr;
 }
 
-Node::Node(Node* n) {
+Node::Node(const Node& other)
+{
+    next = other.next;
 }
 
-Node::~Node() {
+Node::~Node()
+{
+}
+
+Node* Node::copyAll()
+{
+    Node* n = copyAll();
+    if (n->next)
+        n->next = next->copyAll();
+    return n;
+}
+
+void Node::print(int k)
+{
+}
+
+void Node::printSelf()
+{
+}
+
+bool Node::hasNext()
+{
+    return next != nullptr;
+}
+
+bool Node::isSeq()
+{
+    return getType() == seq_node_t;
+}
+
+bool Node::isBlock()
+{
+    return getType() == block_node_t;
+}
+
+bool Node::isList()
+{
+    return getType() == list_node_t;
+}
+
+bool Node::isIntNode()
+{
+    return getType() == int_node_t;
+}
+
+bool Node::isFloatNode()
+{
+    return getType() == float_node_t;
+}
+
+bool Node::isIDNode()
+{
+    return getType() == id_node_t;
+}
+
+bool Node::isStringNode()
+{
+    return getType() == string_node_t;
+}
+
+bool Node::isCharNode()
+{
+    return getType() == char_node_t;
+}
+
+bool Node::isTypeNode()
+{
+    return getType() == type_node_t;
+}
+
+Node* Node::getChild() { throw FunctionNotImplement("getChild", "Element didn't have children"); }
+
+std::string& Node::getStr()
+{
+    std::cerr << "getStr() - 获取字符串错误, 该类型不正确: " << getTypeName() << std::endl;
+    exit(1);
+}
+
+
+Node* Node::make_linked(...) {
+	return nullptr;
+}
+
+Node* Node::makeLinked(int num, Node* plist[]) {
+
+	return nullptr;
+}
+
+
+Node* Node::CreateList(Node* n) {
+	return nullptr;
 
 }
 
-Node* Node::Create(Node* n) {
-	return new Node(n);
+Node* Node::CreateBlock(Node* n) {
+
+	return nullptr;
 }
 
-Node* Node::Create() {
-	return new Node();
-}
-
-
-Node* Node::copy() {
-	return new Node(*this);
-}
-
-Node* Node::copyAll() {
-	Node* n = copy();
-	return n;
-}
-
-
-void Node::print(int k) {
+void Node::Free(Node*& p) {
 
 }
 
-void Node::printSelf() {
-	Node::el.print("Node");
-}
+void Node::FreeAll(Node*& p) {
 
-NodeType Node::getType() {
-	return node_t;
-}
-
-bool Node::isSingle() {
-	return true;
-}
-
-Node* Node::getList(Node* node) {
-	if (!node->isSingle()) return new Node(node);
-	return node;
-}
-
-bool Node::isNode() {
-	return getType() == node_t;
-}
-
-bool Node::isIntNode() {
-	return getType() == int_node_t;
-}
-
-bool Node::isFloatNode() {
-	return getType() == float_node_t;
-}
-
-bool Node::isIDNode() {
-	return getType() == id_node_t;
-}
-
-bool Node::isStringNode() {
-	return getType() == string_node_t;
-}
-
-bool Node::isCharNode() {
-	return getType() == char_node_t;
-}
-
-bool Node::isTypeNode() {
-	return getType() == type_node_t;
 }
 
 
-std::string Node::getTypeName() {
-	switch (getType()) {
-		case node_t: return "Node";
-		case int_node_t: return "IntNode";
-		case string_node_t: return "StringNode";
-		case id_node_t: return "IDNode";
-		case char_node_t: return "CharNode";
-		case float_node_t: return "FloatNode";
-		case type_node_t: return "TypeNode";
-	}
-}
-
-std::string& Node::getStr() {
-	std::cerr << "getStr() - 获取字符串错误, 该类型不正确: " << getTypeName() << std::endl;
-	exit(1);
-}
-
-ElegantList Node::el;
+} // Elite

@@ -7,14 +7,13 @@
 
 
 #include "Elite/Model/StringNode.h"
-#include <stdio.h>
-#include "elegantlist.hpp"
 #include "Utils/StringEscape.h"
 
+namespace Elite {
 StringNode::StringNode(const char* _value){
 	string data = _value;
 	if (data[0] == '@')
-		this->value = StringEscape(data.substr(2, data.length()-3));
+		this->value = data.substr(2, data.length()-3);
 	else
 		this->value = StringEscape(data.substr(1, data.length()-2));
 }
@@ -34,9 +33,9 @@ StringNode* StringNode::Create(char _value) {
 
 void StringNode::printSelf() {
 	// printf("String %s", value.c_str());
-	Node::el.print("\"" + value + "\"");
 }
 
 NodeType StringNode::getType() {
 	return string_node_t;
+}
 }

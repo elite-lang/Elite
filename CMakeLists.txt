@@ -37,10 +37,14 @@ set( CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
 set( CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib )
 
 
-file(GLOB_RECURSE source_files
-        ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
-    )
-list(REMOVE_ITEM  source_files  ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
+# file(GLOB_RECURSE source_files
+#         ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+#     )
+file(GLOB source_files 
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp
+    ${CMAKE_CURRENT_SOURCE_DIR}/src/Model/*.cpp
+)
+list(REMOVE_ITEM source_files  ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp)
 
 
 # 生成库目标

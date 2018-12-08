@@ -8,6 +8,8 @@
 
 #include "Elite/Model/Node.h"
 
+namespace Elite 
+{
 
 class ByteNode: public Node {
 public: 
@@ -16,4 +18,5 @@ public:
 	// virtual Value* codeGen(CodeGenContext* context); 
 };
 
+}
 #endif //_BYTENODE_H

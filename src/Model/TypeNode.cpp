@@ -6,24 +6,24 @@
 */
 
 #include "Elite/Model/TypeNode.h"
-#include "Elite/CodeGen/CodeGenContext.h"
-#include "elegantlist.hpp"
+// #include "Elite/CodeGen/CodeGenContext.h"
 #include <iostream>
 using namespace std;
 
+namespace Elite {
 TypeNode* TypeNode::Create(const char* name, bool is_const, bool is_source) {
 	return new TypeNode(name, is_const, is_source);
 }
 
-LValue TypeNode::typeGen(CodeGenContext* context) {
-	LValue t = context->FindType(str);
-	if (t == NULL) {
-		cerr << "找不到该类型的定义：";
-		cerr << str.c_str() << endl;
-		exit(1);
-	}
-	return t;
-}
+// LValue TypeNode::typeGen(CodeGenContext* context) {
+// 	LValue t = context->FindType(str);
+// 	if (t == NULL) {
+// 		cerr << "找不到该类型的定义：";
+// 		cerr << str.c_str() << endl;
+// 		exit(1);
+// 	}
+// 	return t;
+// }
 
 void TypeNode::addDimension() {
 	++dimension;
@@ -39,15 +39,15 @@ string& TypeNode::getStr() {
 	return str;
 }
 
-string& TypeNode::getTypeName() {
-	return name;
+string TypeNode::getTypeName() {
+	return "type_node";
 }
 
 void TypeNode::printSelf() {
 	// printf("Type ");
-	if (is_const) Node::el.print("const");
+	// if (is_const) Node::el.print("const");
 	// printf("%s", str.c_str());
-	Node::el.print(str);
+	// Node::el.print(str);
 }
 
 TypeNode::TypeNode(const char* name, bool is_const, bool is_source) {
@@ -58,4 +58,6 @@ TypeNode::TypeNode(const char* name, bool is_const, bool is_source) {
 	if (is_source) {
 		this->str.insert(str.begin(), '*');
 	}
+}
+
 }

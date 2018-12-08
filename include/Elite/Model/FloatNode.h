@@ -8,13 +8,16 @@
 
 #include "Elite/Model/Node.h"
 #include <string>
-using namespace std;
 
+namespace Elite
+{
 class FloatNode: public Node {
 public:
 	static FloatNode* Create(const char* num);
-	virtual LValue codeGen(CodeGenContext* context);
+	// virtual LValue codeGen(CodeGenContext* context);
 	virtual NodeType getType();
+	virtual std::string getTypeName();
+	
 	float getFloat();
 	virtual Node* copy() {
 		return new FloatNode(*this);
@@ -25,4 +28,5 @@ protected:
 	FloatNode(const char* num);
 };
 
+}
 #endif //_FLOATNODE_H

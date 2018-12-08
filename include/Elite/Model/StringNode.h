@@ -9,18 +9,17 @@
 #define STRING_NODE_H
 
 #include "Elite/Model/Node.h"
-#include <string>
 
-using namespace std;
-
+namespace Elite {
 class StringNode : public Node
 {
 public:
 	static StringNode* Create(const char* _value);
 	static StringNode* Create(char _value);
 	std::string& getStr() { return value; }
-	virtual LValue codeGen(CodeGenContext* context); 
+	// virtual LValue codeGen(CodeGenContext* context); 
 	virtual NodeType getType();
+	virtual std::string getTypeName();
 	virtual Node* copy() {
 		return new StringNode(*this);
 	}
@@ -29,9 +28,10 @@ protected:
 	StringNode(const char* _value);
 	StringNode(char _value);
 private:
-	string value;
+	std::string value;
 };
 
+}
 
 
 #endif // STRING_NODE_H

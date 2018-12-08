@@ -5,11 +5,11 @@
 
 #include "Elite/Model/FloatNode.h"
 #include <cstdlib>
-#include "elegantlist.hpp"
-#include "Utils/string_formatter.h"
 /**
  * FloatNode implementation
  */
+
+namespace Elite{
 
 FloatNode::FloatNode(const char* num) {
 	value = atof(num);
@@ -23,10 +23,15 @@ NodeType FloatNode::getType() {
 	return float_node_t;
 }
 
+std::string FloatNode::getTypeName() {
+	return "float_node";
+}
+
 float FloatNode::getFloat() {
 	return value;
 }
 
 void FloatNode::printSelf() {
-	Node::el.print(string_format("%f.2", value));
+}
+
 }
