@@ -15,14 +15,19 @@ SET(VERSION_PATCH "0")
 # SET (CMAKE_BUILD_TYPE Release) # 默认构建Debug模式
 
 # 寻找依赖项
-find_package(LLVM REQUIRED CONFIG)
-message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
-message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+# include(${CONAN_LLVM_ROOT}/lib/cmake/llvm/LLVMConfig.cmake)
 
-include_directories(${LLVM_INCLUDE_DIRS})
-add_definitions(${LLVM_DEFINITIONS})
-llvm_map_components_to_libnames(llvm_libs
-	support core irreader mc mcjit bitwriter x86codegen target)
+# if(NOT LLVM_INSTALL_PREFIX)
+#     message(FATAL_ERROR "ERROR! LLVM NOT FOUND!")
+# endif()
+
+# message(STATUS "Found LLVM ${LLVM_PACKAGE_VERSION}")
+# message(STATUS "Using LLVMConfig.cmake in: ${LLVM_DIR}")
+
+# include_directories(${LLVM_INCLUDE_DIRS})
+# add_definitions(${LLVM_DEFINITIONS})
+# llvm_map_components_to_libnames(llvm_libs
+# 	support core irreader mc mcjit bitwriter x86codegen target)
 
 find_package(BISON)
 find_package(FLEX)
@@ -30,6 +35,8 @@ find_package(FLEX)
 # 设定编译器版本和相关目录
 
 set (CMAKE_CXX_STANDARD 14)
+add_definitions(-D_GLIBCXX_USE_CXX11_ABI=0) ## It's important for gtest
+
 include_directories(src include header_libs)
 
 set( CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin )

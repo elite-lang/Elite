@@ -14,12 +14,12 @@ IF(BUILD_DOCUMENTATION)
     add_custom_command(OUTPUT html
         COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile
         COMMAND ${DOXYGEN_EXECUTABLE} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.zh-cn
-        DEPENDS ${MARKDOWN_DOC} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile*
+        DEPENDS ${MARKDOWN_DOC} ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.zh-cn
         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
         )
 
     ADD_CUSTOM_TARGET(doc
-        ALL DEPENDS html
+        DEPENDS html
         COMMENT "Generating API documentation with Doxygen"
         VERBATIM)
 
