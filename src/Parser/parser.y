@@ -1,21 +1,21 @@
 %{
 #include "Model/nodes.h"
-#include <list>
 using namespace std;
 
 #define YYERROR_VERBOSE 1
 
-Node *programBlock; /* the top level root node of our final AST */
-
-extern int yylex();
-extern int yylineno;
-extern char* yytext;
-extern int yyleng;
-
-void yyerror(const char *s);
+using namespace Elite;
+void yyerror (YYLTYPE* yylloc, yyscan_t yyscanner, GrammarParser *parser, const char *msg);
 
 %}
 
+%define api.pure full
+%lex-param {void *scanner}
+%parse-param {void *scanner}{Elite::GrammarParser *parser}
+
+%define parse.trace
+%define parse.error verbose
+%locations 
 
 %union {
     Node *nodes;

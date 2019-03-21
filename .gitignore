@@ -6,4 +6,4 @@
 bin/
 build/
 build-doc/
-
+.vscode/

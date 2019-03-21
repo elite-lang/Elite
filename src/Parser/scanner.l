@@ -20,22 +20,20 @@ char* maketoken(const char* data, int len);
 %%
 
 "/*"([^\*]|(\*)*[^\*/])*(\*)*"*/" ; /* 就是这种注释 */ 
-
-#[^\n]*\n               ; /* 井号注释 */ 
 "//"[^\n]*\n            ; /* 双线注释 */ 
 
-[ \t\v\n\f]             ; /* 过滤空白字符 */
+[ \t\v\n\f]+            ; /* 过滤空白字符 */
 
-    /* 一些双元运算符 */
 "++"                    return PP;
 "--"                    return SS;
+"!"                     return '!';
+
+    /* 一些双元运算符 */
 "<-"                    return LF;
 "->"                    return RF;
 "&&"                    return AND;
 "||"                    return OR;
-"!"                     return '!';
 "::"                    return NSP;
-
 
 "+="                    return PE;
 "-="                    return SE;
